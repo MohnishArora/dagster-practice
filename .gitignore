@@ -1,5 +1,19 @@
-.venv/
+# Python artifacts
 __pycache__/
-*.pyc
+*.py[cod]
+*$py.class
+.venv/
+env/
+venv/
+
+# Dagster temporary storage & state
+.tmp_dagster_home*
 .dagster/
 tmp_dagster_home*
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+tempCodeRunnerFile.py
+.vscode/
+.idea/
