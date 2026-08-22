@@ -3,37 +3,36 @@ from dagster import asset, MaterializeResult, asset_check, AssetCheckResult, Def
 @asset
 def raw_sales():
     data = [100, 250, 75, 400]
-
     return MaterializeResult(
         value = data,
-        metadata = {"total_records": len(data),
-                    "max_sale": max(data)}
+        metadata = {
+            "Total_Records" : len(data),
+            "Max_Sales" : max(data)
+        }
     )
 
 @asset
 def total_revenue(raw_sales):
     revenue = sum(raw_sales)
-
     return MaterializeResult(
         value = revenue,
-        metadata = {"total_revenue": revenue, 
-                    "order_count": len(raw_sales)}
+        metadata = {
+            "Total_Revenue" : revenue,
+            "Order_Count" : len(raw_sales)
+        }
     )
 
-# Add check: total revenue should be more than 500
+# Add a check: total revenue should be more than 500
 
 @asset_check(asset=total_revenue)
 def check_min_revenue(total_revenue):
     min_revenue = total_revenue >= 500
-
     return AssetCheckResult(
         passed = min_revenue,
-        metadata = {"threshold": 500, 
-                    "value": total_revenue}
+        metadata = {"Threshold" : 500, "Value" : total_revenue}
     )
 
-# Bundle assets and checks together for Dagster to differentiate
-
+# Adding a check does nothing on refresh in Dagster UI. Thuse we define Definitions to bundle our assets and checks together for Dagster
 defs = Definitions(
     assets = [raw_sales, total_revenue],
     asset_checks = [check_min_revenue]
