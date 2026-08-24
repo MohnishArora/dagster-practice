@@ -22,7 +22,6 @@ def raw_sales():
     )
 
 
-
 @asset
 def total_revenue(raw_sales):
     revenue = sum(raw_sales)
@@ -59,13 +58,16 @@ daily_sales_schedule = ScheduleDefinition(
 
 # Sensor Creation
 @sensor(job=daily_sales_job)
-def new_file_sensor():
-    file_path = FILE_PATH
-    
-    if os.path.exists(file_path):
-        yield RunRequest(run_key=None)
+def new_file_sensor():    
+    if os.path.exists(FILE_PATH):
+        last_modified = os.path.getmtime(FILE_PATH)
+        yield RunRequest(
+            run_key=f"incoming_data_{last_modified}",
+            message=f"Detected updated {FILE_PATH}"
+        )
     else:
-        yield SkipReason(f"Waiting for {file_path} to arrive.")
+        yield SkipReason(f"Waiting for {FILE_PATH} to arrive.")
+
 
 #Definitions Creation
 defs = Definitions(
