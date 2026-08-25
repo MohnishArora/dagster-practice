@@ -1,7 +1,0 @@
-[32m2026-08-23 00:38:08 -0500[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 333cecb5-bbc8-4b41-b6e1-0a56fd03d2c2 - 52506 - LOGS_CAPTURED - Capturing logs for process (pid: 52506).
-[32m2026-08-23 00:38:08 -0500[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 333cecb5-bbc8-4b41-b6e1-0a56fd03d2c2 - 52506 - raw_sales - STEP_START - Started execution of step "raw_sales".
-[32m2026-08-23 00:38:08 -0500[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 333cecb5-bbc8-4b41-b6e1-0a56fd03d2c2 - 52506 - raw_sales - STEP_OUTPUT - Yielded output "result" of type "Any". (Type check passed).
-[32m2026-08-23 00:38:08 -0500[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 333cecb5-bbc8-4b41-b6e1-0a56fd03d2c2 - raw_sales - Writing file at: /Users/mohnisharora/Documents/DataEnggWork/Projects/dagster-practice/.dagster_home/storage/raw_sales/2026-08-22 using PickledObjectFilesystemIOManager...
-[32m2026-08-23 00:38:08 -0500[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 333cecb5-bbc8-4b41-b6e1-0a56fd03d2c2 - 52506 - raw_sales - ASSET_MATERIALIZATION - Materialized value raw_sales.
-[32m2026-08-23 00:38:08 -0500[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 333cecb5-bbc8-4b41-b6e1-0a56fd03d2c2 - 52506 - raw_sales - HANDLED_OUTPUT - Handled output "result" using IO manager "io_manager"
-[32m2026-08-23 00:38:08 -0500[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 333cecb5-bbc8-4b41-b6e1-0a56fd03d2c2 - 52506 - raw_sales - STEP_SUCCESS - Finished execution of step "raw_sales" in 37ms.
