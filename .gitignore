@@ -10,6 +10,7 @@ venv/
 .tmp_dagster_home*
 .dagster/
 tmp_dagster_home*
+.dagster_home
 
 # OS and editor files
 .DS_Store
